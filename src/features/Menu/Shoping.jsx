@@ -9,8 +9,13 @@ import data_product from "../../Assets/data";
 import Item from "./Item";
 import NewCollection from "./NewCollection";
 import Button from "../ui/Button";
-import logo from "../../Assets/logo.png";
+import Shopper from "../ui/Shopper";
+
 function Shoping() {
+  function handlesubmit(e) {
+    e.preventDefault();
+  }
+
   return (
     <div>
       <NavBar />
@@ -64,25 +69,24 @@ underline underline-offset-8 decoration "
         </h1>
         <NewCollection />
       </div>
-      <div className="bg-rose-200 self-center place-items-center mt-10 py-16 mx-56 relative mb-6 ">
+      <div className="bg-rose-200 self-center place-items-center mt-10 py-16 mb-6 sm:w-[650px] mx-auto relative ">
         <h1 className="font-bold capitalize text-4xl mb-4 ">
           get exclusive offerson your email
         </h1>
         <p className="mb-3">Subscribe to our newsletter and stay updated</p>
-        <input
-          className="w-64 rounded-full border border-stone-200 px-4 py-2 text-sm focus:outline-none focus:ring focus:ring-yellow-400 transition-all duration-300  md:px-6 md:py-2;"
-          type="email"
-          placeholder="your email id"
-        />
-        <span className="absolute mt-1 right-72">
-          <Button type="small">Subscribes</Button>
-        </span>
+        <form>
+          <input
+            className="w-64 rounded-full border border-stone-200 px-4 py-2 text-sm focus:outline-none focus:ring focus:ring-yellow-400 transition-all duration-300  md:px-6 md:py-2;"
+            type="email"
+            placeholder="your email id"
+          />
+          <Button type="small" onClick={handlesubmit}>
+            Subscribes
+          </Button>
+        </form>
 
         <div className="mt-16">
-          <div className="flex space-x-2 items-center">
-            <img src={logo} alt="logo" />
-            <h1 className="font-bold text-3xl uppercase ">shopper</h1>
-          </div>
+          <Shopper />
         </div>
         <ul className="flex space-x-2 mt-6">
           <li>compony</li>
