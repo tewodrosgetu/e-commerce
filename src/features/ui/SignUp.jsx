@@ -7,27 +7,27 @@ function SignUp() {
         <form className="flex flex-col bg-white px-10  w-96 space-y-5 pt-7 pb-10 justify-self-center border rounded-xl ">
           <h1 className="font-bold text-xl capitalize">sign up</h1>
           <input
-            className="border-2 border-stone-400 placeholder:py-9 placeholder:px-3 indent-2 "
+            className="border-2 border-stone-400 placeholder:py-9 placeholder:px-3 indent-2 py-2"
             type="text"
             placeholder="Your name"
           />
           <input
-            className="border-2 border-stone-400 placeholder:py-9 placeholder:px-3 indent-2 "
+            className="border-2 border-stone-400 placeholder:py-9 placeholder:px-3 indent-2 py-2 "
             type="email"
             placeholder="Email Addres"
           />
           <input
-            className="border-2 border-stone-400 placeholder:py-9 placeholder:px-3 indent-2 "
+            className="border-2 border-stone-400 placeholder:py-9 placeholder:px-3 indent-2 py-2 "
             type="password"
             placeholder="password"
           />
-          <button className="border-1 border-black bg-red-500 ">
+          <button className="border-1 border-black bg-red-500 py-2 ">
             continue
           </button>
           <span>
             Already have an account?
             <Link className="text-red-500" to="/login">
-              click here
+              Login here
             </Link>
           </span>
           <div className="space-x-1">

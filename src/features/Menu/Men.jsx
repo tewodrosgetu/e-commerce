@@ -4,14 +4,17 @@ import all_product from "../../Assets/all_product";
 import Button from "../ui/Button";
 import { useState } from "react";
 import Shopper from "../ui/Shopper";
+import { Outlet, Link } from "react-router-dom";
 
 function Men() {
   const men = all_product.filter((item) => item.category === "men");
   const [explore, setExplore] = useState(true);
+
   function handleexplore(e) {
     e.preventDefault();
     setExplore(!explore);
   }
+
   return (
     <div>
       <NavBar />
@@ -32,7 +35,7 @@ function Men() {
             </select>
           </div>
         </div>
-        <ul className="grid grid-cols-4 gap-9 mx-16 ">
+        <ul className="grid grid-cols-4 gap-9 mx-16">
           {men.map((item) => (
             <ManItem item={item} key={item.id} explore={explore} />
           ))}
@@ -46,20 +49,23 @@ function Men() {
       <div className="flex justify-center my-9">
         <Shopper />
       </div>
+      <Outlet />
     </div>
   );
 }
+
 function ManItem({ item, explore }) {
-  if (item.id > 20 && explore) return;
+  if (item.id > 20 && explore) return null;
   return (
     <div>
-      <li>
-        <img className="hover:scale-105 pb-2" src={item.image} alt="women" />
+      <Link to={`/men/${item.id}`}>
+        <img className="hover:scale-105 pb-2" src={item.image} alt="item" />
         <p>{item.name}</p>
         <span className="pr-2">${item.new_price}</span>
         <span className="text-stone-400 line-through">${item.old_price}</span>
-      </li>
+      </Link>
     </div>
   );
 }
+
 export default Men;
