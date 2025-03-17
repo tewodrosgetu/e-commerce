@@ -4,7 +4,7 @@ function Login() {
   return (
     <div>
       <div className="bg-rose-200 h-screen content-center  ">
-        <form className="flex flex-col bg-white px-10  w-96 space-y-5 pt-7 pb-10 justify-self-center ">
+        <form className="flex flex-col bg-white px-10  w-96 space-y-5 pt-7 pb-10 justify-self-center border rounded-xl ">
           <h1 className="font-bold text-xl">Login</h1>
           <input
             className="border-2 border-stone-400 placeholder:py-9 placeholder:px-3 indent-2 "
