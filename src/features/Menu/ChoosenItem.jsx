@@ -1,13 +1,13 @@
-// filepath: c:\Users\hp\Desktop\e-commerce\src\features\Menu\ChoosenItem.jsx
 import { useParams } from "react-router-dom";
 
 function ChoosenItem() {
-  const { id } = useParams();
-  // Fetch or use the item data based on the id
+  const { id } = useParams(); // Get the id from the URL
+
   return (
     <div>
-      <h2>Item Details for ID: {id}</h2>
-      {/* Render item details here */}
+      <h1>Chosen Item</h1>
+      <p>Item ID: {id}</p>
+      {/* Add logic to display the specific item based on id */}
     </div>
   );
 }

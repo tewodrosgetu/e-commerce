@@ -4,7 +4,8 @@ import all_product from "../../Assets/all_product";
 import Button from "../ui/Button";
 import { useState } from "react";
 import Shopper from "../ui/Shopper";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 function Men() {
   const men = all_product.filter((item) => item.category === "men");
@@ -49,6 +50,7 @@ function Men() {
       <div className="flex justify-center my-9">
         <Shopper />
       </div>
+      {/* Render child routes here */}
       <Outlet />
     </div>
   );
