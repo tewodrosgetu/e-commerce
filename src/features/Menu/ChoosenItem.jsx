@@ -5,6 +5,7 @@ import NavBar from "../ui/NavBar";
 import star_icon from "../../Assets/star_icon.png";
 import dual_star_icon from "../../Assets/star_dull_icon.png";
 import Button from "../ui/Button";
+import Shopper from "../ui/Shopper";
 function ChoosenItem() {
   const { id } = useParams();
   const choose = all_product.find((item) => item.id === Number(id));
@@ -53,7 +54,7 @@ function ChoosenItem() {
                 <p>
                   A lightweight ,usually knitted ,pillover shirt,close-fitting
                   and withe a round neckline and short sleeves, worn as an
-                  undershirt or outer garmen{" "}
+                  undershirt or outer garmen.
                 </p>
               </div>
               <div>
@@ -68,11 +69,20 @@ function ChoosenItem() {
                 <div className="mt-8">
                   <Button type="primary">ADD TO CART </Button>
                 </div>
+                <div className="mt-8">
+                  <p>
+                    <span className="font-bold">Catagory: </span>
+                    {choose.category},T-shirt,Crop Top
+                  </p>
+                  <p>
+                    <span className="font-bold">Tags: </span>Modern,Lates
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <h1>teda</h1>
+        <Shopper />
       </div>
     </div>
   );

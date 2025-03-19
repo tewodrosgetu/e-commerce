@@ -88,24 +88,6 @@ underline underline-offset-8 decoration "
         <div className="mt-16">
           <Shopper />
         </div>
-        <ul className="flex space-x-2 mt-6">
-          <li>compony</li>
-          <li>product</li>
-          <li>officer</li>
-          <li>about</li>
-          <li>contact</li>
-        </ul>
-        <ul className="flex space-x-2 mt-4">
-          <li>
-            <img src={insta} alt="insta" />
-          </li>
-          <li>
-            <img src={point} alt="point" />
-          </li>
-          <li>
-            <img src={whatsup} alt="whatsup" />
-          </li>
-        </ul>
       </div>
     </div>
   );

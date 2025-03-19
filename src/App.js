@@ -6,6 +6,7 @@ import Kid from "./features/Menu/Kid";
 import Login from "./features/ui/Login";
 import SignUp from "./features/ui/SignUp";
 import ChoosenItem from "./features/Menu/ChoosenItem";
+import Cart from "./features/Menu/Cart";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <SignUp />,
+  },
+  {
+    path: "/cart",
+    element: <Cart />,
   },
 ]);
 

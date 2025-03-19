@@ -27,10 +27,12 @@ function NavBar() {
         <Button type="small" to="/login">
           Login
         </Button>
-        <img src={cart_icon} alt="cart" />
-        <div className="w-6 h-5 flex content-center items-center bg-red-500 rounded-xl justify-center -mt-5">
-          0
-        </div>
+        <Link to="/cart" className="flex">
+          <img src={cart_icon} alt="cart" />
+          <div className="w-6 h-5 flex content-center items-center bg-red-500 rounded-xl justify-center">
+            0
+          </div>
+        </Link>
       </div>
     </div>
   );
