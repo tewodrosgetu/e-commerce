@@ -7,9 +7,12 @@ import dual_star_icon from "../../Assets/star_dull_icon.png";
 import Button from "../ui/Button";
 import Shopper from "../ui/Shopper";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "./CartSlice";
 function ChoosenItem() {
   const [showdesc, setShowDesc] = useState(true);
   const [showreviw, setShowreview] = useState(false);
+  const dispatch = useDispatch();
   const { id } = useParams();
   const choose = all_product.find((item) => item.id === Number(id));
   function handledesc(e) {
@@ -22,10 +25,21 @@ function ChoosenItem() {
     setShowDesc(false);
     setShowreview(true);
   }
+  function handleaddtocart(e) {
+    e.preventDefault();
+    const cart = {
+      image: choose.image,
+      name: choose.name,
+      new_price: choose.new_price,
+      quantity: 1,
+      totalprice: 1 * choose.new_price,
+    };
+    dispatch(addItem(cart));
+  }
   return (
     <div>
       <NavBar />
-      <div className="sm:px-28 px-10 mt-10">
+      <form className="sm:px-28 px-10 mt-10">
         <span className="flex space-x-1 text-sm">
           <h1>Home </h1>
           <img src={inside} alt="choosen_item" />
@@ -79,7 +93,9 @@ function ChoosenItem() {
                   <Button type="small">XXL</Button>
                 </div>
                 <div className="mt-8">
-                  <Button type="primary">ADD TO CART </Button>
+                  <Button onClick={handleaddtocart} type="primary">
+                    ADD TO CART
+                  </Button>
                 </div>
                 <div className="mt-8">
                   <p>
@@ -124,7 +140,7 @@ function ChoosenItem() {
           </div>
         </div>
         <Shopper />
-      </div>
+      </form>
     </div>
   );
 }
