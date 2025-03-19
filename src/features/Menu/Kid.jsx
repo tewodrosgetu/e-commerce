@@ -52,7 +52,7 @@ function Kid() {
 function ManItem({ item, explore }) {
   if (item.id > 32 && explore) return;
   return (
-    <Link to={`/kid/:${item.id}`}>
+    <Link to={`/kid/${item.id}`}>
       <li>
         <img className="hover:scale-105 pb-2" src={item.image} alt="women" />
         <p>{item.name}</p>

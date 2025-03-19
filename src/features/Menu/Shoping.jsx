@@ -19,8 +19,8 @@ function Shoping() {
   return (
     <div>
       <NavBar />
-      <div className="flex items-center gap-20 justify-self-center">
-        <div className="justify-self-center self-center py-10 px-7">
+      <div className="flex items-center gap-28 justify-center bg-gradient-to-b from-rose-400 via-rose-200 to-rose-100">
+        <div className="justify-self-center self-center py-10 px-10  ">
           <p className="uppercase">new arrivals only</p>
           <span className="flex items-center gap-1">
             <h1 className="text-6xl font-bold">new</h1>
@@ -50,7 +50,7 @@ underline underline-offset-8 decoration "
           ))}
         </ul>
       </div>
-      <div className="flex items-center mx-32 gap-40 bg-rose-300 mt-32 place-content-center">
+      <div className="flex items-center mx-32 gap-40 bg-gradient-to-b from-blue-500 via-teal-500 to-green-500 mt-32 place-content-center">
         <div className="space-y-3">
           <h1 className="text-6xl font-bold">exclusive</h1>
           <h1 className="text-6xl font-bold">offers for you</h1>

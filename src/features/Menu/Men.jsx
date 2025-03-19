@@ -59,7 +59,7 @@ function ManItem({ item, explore }) {
   if (item.id > 20 && explore) return null;
   return (
     <div>
-      <Link to={`/men/${item.id}`} item={item}>
+      <Link to={`/men/${item.id}`}>
         <img className="hover:scale-105 pb-2" src={item.image} alt="item" />
         <p>{item.name}</p>
         <span className="pr-2">${item.new_price}</span>

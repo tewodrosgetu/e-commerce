@@ -53,7 +53,7 @@ function Women() {
 function ManItem({ item, explore }) {
   if (item.id > 8 && explore) return;
   return (
-    <Link to={`/women/:${item.id}`}>
+    <Link to={`/women/${item.id}`}>
       <li>
         <img className="hover:scale-105 pb-2" src={item.image} alt="women" />
         <p>{item.name}</p>
