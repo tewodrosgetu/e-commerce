@@ -1,13 +1,15 @@
 import { useParams } from "react-router-dom";
+import all_product from "../../Assets/all_product";
 
-function ChoosenItem() {
-  const { id } = useParams(); // Get the id from the URL
+function ChoosenItem({ item }) {
+  const { id } = useParams();
+
+  const choose = all_product.find((item) => item.id === Number(id));
 
   return (
     <div>
-      <h1>Chosen Item</h1>
-      <p>Item ID: {id}</p>
-      {/* Add logic to display the specific item based on id */}
+      <h1>Choosen id:{choose.id}</h1>
+      <img src={choose.image} alt="choosen_image" />
     </div>
   );
 }

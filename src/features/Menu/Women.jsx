@@ -5,6 +5,7 @@ import all_product from "../../Assets/all_product";
 import Button from "../ui/Button";
 
 import Shopper from "../ui/Shopper";
+import { Link } from "react-router-dom";
 function Women() {
   const men = all_product.filter((item) => item.category === "women");
   const [explore, setExplore] = useState(true);
@@ -52,14 +53,14 @@ function Women() {
 function ManItem({ item, explore }) {
   if (item.id > 8 && explore) return;
   return (
-    <div>
+    <Link to={`/women/:${item.id}`}>
       <li>
         <img className="hover:scale-105 pb-2" src={item.image} alt="women" />
         <p>{item.name}</p>
         <span className="pr-2">${item.new_price}</span>
         <span className="text-stone-400 line-through ">${item.old_price}</span>
       </li>
-    </div>
+    </Link>
   );
 }
 

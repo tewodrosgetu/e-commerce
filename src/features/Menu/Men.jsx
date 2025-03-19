@@ -50,7 +50,6 @@ function Men() {
       <div className="flex justify-center my-9">
         <Shopper />
       </div>
-      {/* Render child routes here */}
       <Outlet />
     </div>
   );
@@ -60,7 +59,7 @@ function ManItem({ item, explore }) {
   if (item.id > 20 && explore) return null;
   return (
     <div>
-      <Link to={`/men/${item.id}`}>
+      <Link to={`/men/${item.id}`} item={item}>
         <img className="hover:scale-105 pb-2" src={item.image} alt="item" />
         <p>{item.name}</p>
         <span className="pr-2">${item.new_price}</span>

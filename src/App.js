@@ -25,8 +25,16 @@ const router = createBrowserRouter([
     element: <Women />,
   },
   {
+    path: "/women/:id",
+    element: <ChoosenItem />,
+  },
+  {
     path: "/kid",
     element: <Kid />,
+  },
+  {
+    path: "/kid/:id",
+    element: <ChoosenItem />,
   },
   {
     path: "/login",
