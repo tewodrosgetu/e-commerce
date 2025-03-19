@@ -6,10 +6,22 @@ import star_icon from "../../Assets/star_icon.png";
 import dual_star_icon from "../../Assets/star_dull_icon.png";
 import Button from "../ui/Button";
 import Shopper from "../ui/Shopper";
+import { useState } from "react";
 function ChoosenItem() {
+  const [showdesc, setShowDesc] = useState(true);
+  const [showreviw, setShowreview] = useState(false);
   const { id } = useParams();
   const choose = all_product.find((item) => item.id === Number(id));
-
+  function handledesc(e) {
+    e.preventDefault();
+    setShowDesc(true);
+    setShowreview(false);
+  }
+  function handlereview(e) {
+    e.preventDefault();
+    setShowDesc(false);
+    setShowreview(true);
+  }
   return (
     <div>
       <NavBar />
@@ -80,6 +92,35 @@ function ChoosenItem() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="flex flex-col my-10 ">
+          <div className=" flex gap-2  mb-5">
+            <Button type="secondary" onClick={handledesc}>
+              Description
+            </Button>
+            <Button type="secondary" onClick={handlereview}>
+              Reviews(122)
+            </Button>
+          </div>
+          <div className=" border border-black p-4 ">
+            {showdesc && (
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptas alias aut quaerat praesentium ipsum ducimus quidem
+                obcaecati nam dolorum! Quaerat eveniet aut tempore inventore
+                reiciendis dignissimos blanditiis atque provident
+                exercitationem?
+              </p>
+            )}
+            {showreviw && (
+              <p>
+                Lorem 2 ipsum dolor sit amet consectetur adipisicing elit. Error
+                alias, aut ipsam aliquam quibusdam tempora commodi
+                exercitationem magnam optio adipisci sit vitae fugit tempore
+                consequatur illo quam sequi, iusto dolor.
+              </p>
+            )}
           </div>
         </div>
         <Shopper />

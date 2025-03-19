@@ -4,7 +4,7 @@ import whatsup from "../../Assets/whatsapp_icon.png";
 import point from "../../Assets/pintester_icon.png";
 function Shopper() {
   return (
-    <div className="flex flex-col space-x-2 items-center justify-center ">
+    <div className="flex flex-col space-x-2 items-center justify-center my-8 ">
       <img src={logo} alt="logo" />
       <h1 className="font-bold text-3xl uppercase ">shopper</h1>
       <ul className="flex space-x-2 mt-6">
