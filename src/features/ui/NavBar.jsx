@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 import Logo from "./Logo";
 import cart_icon from "../../Assets/cart_icon.png";
 import Button from "./Button";
+import { getTotalQuantity } from "../Menu/CartSlice";
+import { useSelector } from "react-redux";
 
 function NavBar() {
+  const numberofcart = useSelector(getTotalQuantity);
   return (
     <div className="flex items-center justify-around bg-stone-400">
       <Logo />
@@ -30,7 +33,7 @@ function NavBar() {
         <Link to="/cart" className="flex">
           <img src={cart_icon} alt="cart" />
           <div className="w-6 h-5 flex content-center items-center bg-red-500 rounded-xl justify-center">
-            0
+            {numberofcart}
           </div>
         </Link>
       </div>
