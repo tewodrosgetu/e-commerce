@@ -5,8 +5,9 @@ import { deleteItem } from "../Menu/CartSlice";
 function CartItem({ item }) {
   const dispatch = useDispatch();
 
-  function handleDelete(id) {
-    dispatch(deleteItem(id));
+  function handleDelete() {
+    console.log(item.id);
+    dispatch(deleteItem(item.id));
   }
 
   return (
@@ -16,7 +17,7 @@ function CartItem({ item }) {
       <span>${item.new_price}</span>
       <h2>{item.quantity}</h2>
       <h2>${item.totalprice}</h2>
-      <Button type="round" onClick={() => handleDelete(item.id)}>
+      <Button type="round" onClick={handleDelete}>
         Delete
       </Button>
     </li>

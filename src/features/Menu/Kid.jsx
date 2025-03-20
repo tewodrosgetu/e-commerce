@@ -5,13 +5,16 @@ import all_product from "../../Assets/all_product";
 import Button from "../ui/Button";
 import Shopper from "../ui/Shopper";
 import { Link } from "react-router-dom";
+
 function Kid() {
   const men = all_product.filter((item) => item.category === "kid");
   const [explore, setExplore] = useState(true);
+
   function handleexplore(e) {
     e.preventDefault();
     setExplore(!explore);
   }
+
   return (
     <div>
       <NavBar />
@@ -23,16 +26,16 @@ function Kid() {
             <span>out of 54 product</span>
           </div>
           <div>
-            <select>
-              <option disabled selected>
+            <select defaultValue="">
+              <option value="" disabled>
                 sort by
               </option>
-              <option>name</option>
-              <option>balance</option>
+              <option value="name">name</option>
+              <option value="balance">balance</option>
             </select>
           </div>
         </div>
-        <ul className="grid grid-cols-4 gap-9 mx-16 ">
+        <ul className="grid grid-cols-4 gap-9 mx-16">
           {men.map((item) => (
             <ManItem item={item} key={item.id} explore={explore} />
           ))}
@@ -49,8 +52,9 @@ function Kid() {
     </div>
   );
 }
+
 function ManItem({ item, explore }) {
-  if (item.id > 32 && explore) return;
+  if (item.id > 32 && explore) return null;
   return (
     <Link to={`/kid/${item.id}`}>
       <li>

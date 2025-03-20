@@ -28,6 +28,7 @@ function ChoosenItem() {
   function handleaddtocart(e) {
     e.preventDefault();
     const cart = {
+      id: choose.id,
       image: choose.image,
       name: choose.name,
       new_price: choose.new_price,

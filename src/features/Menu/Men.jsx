@@ -27,12 +27,12 @@ function Men() {
             <span>out of 54 product</span>
           </div>
           <div>
-            <select>
-              <option disabled selected>
+            <select defaultValue="">
+              <option value="" disabled selected>
                 sort by
               </option>
-              <option>name</option>
-              <option>balance</option>
+              <option value="name">name</option>
+              <option value="balance">balance</option>
             </select>
           </div>
         </div>
